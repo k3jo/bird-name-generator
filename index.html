@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bird Name Generator</title>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<h1>Bird Name Generator</h1>
+	
+	<div>
+		<button>Generate Name</button>
+		<p></p>		
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+	  crossorigin="anonymous"></script>
+
+	<script>
+
+	var titleList = ["Honorable", "Ms.", "Mr.", "Professor", "Lady", "Duke", "Duchess"];
+	var adjList = ["Messy", "Nuclear", "Sunny", "Chatty", "Childish", "Smokey", "Lucky", "Suave"];
+	var nounList = ["Kiwi", "Mango", "Skittles", "Harley", "Phoenix", "Eagle", "Sammy", "Peaches", "Tweety", "Charlie", "Bebe", "Gizmo", "Noodles", "Odin", "Pixie", "Picles", "Zeus", "Goldie", "Robin"];
+	var wildcardList = ["Smith", "Tailfeathers", "the First", "Pikachu", "Chirp", "Twinkles", "Bon Bon", "Chip", "Littlefoot", "Big Bird"];
+
+
+	var generateNumber = function(number){
+		return Math.floor(Math.random() * number);
+	}
+
+	var randomName = function(choice){
+		var i = generateNumber(choice.length);
+		var name = choice[i];
+		return name;
+	}
+
+	var fullName = function(){
+		return randomName(titleList) + " " + randomName(adjList) + " " + randomName(nounList) + " " + randomName(wildcardList);
+	}
+
+	$(function(){
+
+
+		$('button').on('click', function(e){
+			e.preventDefault();
+				$('p').empty();
+			$('p').html(fullName());	
+		});
+
+
+	});
+
+	</script>
+	
+</body>
+</html>
