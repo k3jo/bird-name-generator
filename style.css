@@ -18,20 +18,42 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 }
 h1 {
 	margin: 0;
-	margin-top: 40px;
+	font-size: 55px;
+	font-family: 'Life Savers', cursive;
+	padding-right: 20px;
+	margin-bottom: 15px;
 }
-
+p {
+	margin: 0;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
 body {
-	/*background: green;*/
-	text-align: center;
 	margin: 0 auto;
 	font-family: georgia, serif;
-	/*display:flex;*/
-/*	flex-direction:column;
-	justify-content: center;
-	align-items: center;*/
 }
-div {
+.wrapper {
+	width: 45%;
+	max-width: 1000px;
+	margin: 0 auto;
+	/*border: 1px solid gray;*/
+	display: flex;
+	flex-direction: row;
+}
+
+.copy {
+	margin-top: 50px;
+}
+.col {
+	width: 50%;
+}
+.col p {
+	padding-right: 20px;
+}
+img {
+	width: 100%;
+}
+/*div {
 	border: 5px double gray;
 	width: 50%;
 	height: 250px;
@@ -39,7 +61,7 @@ div {
 	margin: 0 auto;
 	padding: 40px;
 	margin-top: 50px;
-}
+}*/
 button {
 	margin-bottom: 20px;
 	border: none;
@@ -48,7 +70,35 @@ button {
 	color: white;
 	padding: 10px 15px;
 }
-p {
+
+.gen-name {
+	text-align: center;
+	margin: 0 auto;
+	background: orange;
+	/*padding: 5px 10px;*/
+	margin-top: 20px;
+	/*color: white;*/
+}
+/*p {
 	border-top: 1px solid black;
 	padding-top: 25px;
+}*/
+@media (max-width: 1024px) {
+	.wrapper {
+		width: 60%;
+	}
+	h1 {
+		font-size: 40px;
+	}
+}
+@media (max-width: 767px) {
+	.wrapper {
+		width: 80%;
+	}
+	.image {
+		order: 1;
+	}
+	.copy {
+		order: 2;
+	}
 }
